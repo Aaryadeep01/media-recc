@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Recommendation Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #008cba;
+            padding-top: 20px;
+        }
+
+        h3 {
+            color: #008cba;
+        }
+
+        form {
+            width: 60%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            background-color: #008cba;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0077a2;
+        }
+
+        #recommendation {
+            display: none;
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #recommendation h2 {
+            color: #28a745;
+        }
+
+        .recommendation-text {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Highlight section */
+        .highlight {
+            color: #008cba;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome to the Media Recommendation Quiz!</h2>
+<p style="text-align: center; font-size: 1.1em; color: #555;">Answer the following questions to receive personalized media suggestions:</p>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <h3>1. What do you enjoy the most in a media?</h3>
+    <label><input type="radio" name="question1" value="Story"> Story</label>
+    <label><input type="radio" name="question1" value="Characters"> Characters</label>
+    <label><input type="radio" name="question1" value="World-building"> World-building</label>
+    <label><input type="radio" name="question1" value="Themes"> Themes</label>
+    <label><input type="radio" name="question1" value="Pacing"> Pacing</label>
+    <label><input type="radio" name="question1" value="Visuals"> Visuals (for movies, anime, etc.)</label>
+
+    <!-- Question 2 -->
+    <h3>2. What genre are you in the mood for?</h3>
+    <label><input type="radio" name="question2" value="Action"> Action</label>
+    <label><input type="radio" name="question2" value="Adventure"> Adventure</label>
+    <label><input type="radio" name="question2" value="Drama"> Drama</label>
+    <label><input type="radio" name="question2" value="Comedy"> Comedy</label>
+    <label><input type="radio" name="question2" value="Fantasy"> Fantasy</label>
+    <label><input type="radio" name="question2" value="Mystery"> Mystery</label>
+    <label><input type="radio" name="question2" value="Horror"> Horror</label>
+    <label><input type="radio" name="question2" value="Romance"> Romance</label>
+    <label><input type="radio" name="question2" value="Sci-Fi"> Sci-Fi</label>
+    <label><input type="radio" name="question2" value="Slice of Life"> Slice of Life</label>
+    <label><input type="radio" name="question2" value="Thriller"> Thriller</label>
+    <label><input type="radio" name="question2" value="Superhero"> Superhero</label>
+
+    <!-- Question 3 -->
+    <h3>3. What type of ending do you prefer?</h3>
+    <label><input type="radio" name="question3" value="Happy"> Happy</label>
+    <label><input type="radio" name="question3" value="Sad"> Sad</label>
+    <label><input type="radio" name="question3" value="Open-ended"> Open-ended</label>
+    <label><input type="radio" name="question3" value="Bittersweet"> Bittersweet</label>
+
+    <!-- Question 4 -->
+    <h3>4. What setting appeals to you the most?</h3>
+    <label><input type="radio" name="question4" value="Urban"> Urban</label>
+    <label><input type="radio" name="question4" value="Fantasy World"> Fantasy World</label>
+    <label><input type="radio" name="question4" value="Historical"> Historical</label>
+    <label><input type="radio" name="question4" value="Space"> Space</label>
+
+    <!-- Question 5 -->
+    <h3>5. What type of character do you prefer?</h3>
+    <label><input type="radio" name="question5" value="Heroic"> Heroic</label>
+    <label><input type="radio" name="question5" value="Anti-hero"> Anti-hero</label>
+    <label><input type="radio" name="question5" value="Villain"> Villain</label>
+    <label><input type="radio" name="question5" value="Relatable"> Relatable</label>
+
+    <!-- Question 6 -->
+    <h3>6. How do you prefer the pacing of a story?</h3>
+    <label><input type="radio" name="question6" value="Fast"> Fast-paced</label>
+    <label><input type="radio" name="question6" value="Slow"> Slow-paced</label>
+    <label><input type="radio" name="question6" value="Balanced"> Balanced</label>
+
+    <!-- Question 7 -->
+    <h3>7. What aspect do you prefer the most in a plot?</h3>
+    <label><input type="radio" name="question7" value="Plot Twists"> Plot Twists</label>
+    <label><input type="radio" name="question7" value="Character Growth"> Character Growth</label>
+    <label><input type="radio" name="question7" value="Romance"> Romance</label>
+    <label><input type="radio" name="question7" value="Action"> Action</label>
+
+    <!-- Question 8 -->
+    <h3>8. Do you prefer a story that is:</h3>
+    <label><input type="radio" name="question8" value="Standalone"> Standalone</label>
+    <label><input type="radio" name="question8" value="Series"> Part of a series</label>
+
+    <!-- Question 9 -->
+    <h3>9. What is your preferred tone?</h3>
+    <label><input type="radio" name="question9" value="Light"> Light and humorous</label>
+    <label><input type="radio" name="question9" value="Dark"> Dark and serious</label>
+    <label><input type="radio" name="question9" value="Balanced"> Balanced</label>
+
+    <!-- Question 10 -->
+    <h3>10. Do you enjoy media with:</h3>
+    <label><input type="radio" name="question10" value="Action-packed"> Lots of action</label>
+    <label><input type="radio" name="question10" value="Dialogue-heavy"> Lots of dialogue</label>
+    <label><input type="radio" name="question10" value="Character-driven"> Focus on character development</label>
+
+    <!-- Question 11 -->
+    <h3>11. Which of these elements draws you to a story?</h3>
+    <label><input type="radio" name="question11" value="Emotion"> Emotional depth</label>
+    <label><input type="radio" name="question11" value="Action"> Action sequences</label>
+    <label><input type="radio" name="question11" value="Humor"> Humor</label>
+    <label><input type="radio" name="question11" value="Intrigue"> Intriguing mystery</label>
+
+    <!-- Question 12 -->
+    <h3>12. Do you prefer a story with:</h3>
+    <label><input type="radio" name="question12" value="Small Cast"> Small cast of characters</label>
+    <label><input type="radio" name="question12" value="Large Cast"> Large ensemble cast</label>
+
+    <!-- Question 13 -->
+    <h3>13. What kind of media format do you prefer?</h3>
+    <label><input type="radio" name="question13" value="Movie"> Movie</label>
+    <label><input type="radio" name="question13" value="TV Show"> TV Show</label>
+    <label><input type="radio" name="question13" value="Anime"> Anime</label>
+    <label><input type="radio" name="question13" value="Manga"> Manga</label>
+    <label><input type="radio" name="question13" value="Light Novel"> Light Novel</label>
+
+    <!-- Question 14 -->
+    <h3>14. How long would you like your media to be?</h3>
+    <label><input type="radio" name="question14" value="Short"> Short (less than 10 hours)</label>
+    <label><input type="radio" name="question14" value="Medium"> Medium (10-50 hours)</label>
+    <label><input type="radio" name="question14" value="Long"> Long (over 50 hours)</label>
+
+    <!-- Question 15 -->
+    <h3>15. Do you prefer stories with:</h3>
+    <label><input type="radio" name="question15" value="Realistic"> Realistic elements</label>
+    <label><input type="radio" name="question15" value="Fantasy"> Fantasy elements</label>
+    <label><input type="radio" name="question15" value="Supernatural"> Supernatural elements</label>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+</form>
+
+<!-- Recommendation Section (hidden initially) -->
+<div id="recommendation">
+    <h2>Your Recommended Media:</h2>
+    <p id="recommendationText" class="recommendation-text"></p>
+</div>
+
+<script>
+// JavaScript to handle form submission and recommendations
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    // Collect answers
+    const answers = {
+        question1: document.querySelector('input[name="question1"]:checked')?.value,
+        question2: document.querySelector('input[name="question2"]:checked')?.value,
+        question3: document.querySelector('input[name="question3"]:checked')?.value,
+        question4: document.querySelector('input[name="question4"]:checked')?.value,
+        question5: document.querySelector('input[name="question5"]:checked')?.value,
+        question6: document.querySelector('input[name="question6"]:checked')?.value,
+        question7: document.querySelector('input[name="question7"]:checked')?.value,
+        question8: document.querySelector('input[name="question8"]:checked')?.value,
+        question9: document.querySelector('input[name="question9"]:checked')?.value,
+        question10: document.querySelector('input[name="question10"]:checked')?.value,
+        question11: document.querySelector('input[name="question11"]:checked')?.value,
+        question12: document.querySelector('input[name="question12"]:checked')?.value,
+        question13: document.querySelector('input[name="question13"]:checked')?.value,
+        question14: document.querySelector('input[name="question14"]:checked')?.value,
+        question15: document.querySelector('input[name="question15"]:checked')?.value,
+    };
+
+    // Process answers and generate recommendations
+    let recommendations = generateRecommendations(answers);
+
+    // Show the recommendation section
+    document.getElementById('recommendation').style.display = 'block';
+
+    // Display recommendations
+    document.getElementById('recommendationText').innerHTML = recommendations;
+});
+
+// Function to generate recommendations based on user answers
+function generateRecommendations(answers) {
+    let recommendations = '';
+
+    // Customize recommendations based on the responses
+    if (answers.question1 === 'Story' && answers.question2 === 'Action' && answers.question3 === 'Happy') {
+        recommendations += 'We recommend "The Dark Knight" movie for exciting, action-packed stories with a hopeful ending.<br>';
+        recommendations += 'Also, "Attack on Titan" anime is a great choice if you enjoy high-stakes action and thrilling storylines.<br>';
+    } 
+    else if (answers.question1 === 'Characters' && answers.question2 === 'Drama' && answers.question3 === 'Sad') {
+        recommendations += 'If you love deep character development and emotional storytelling, we recommend "Breaking Bad" TV show.<br>';
+        recommendations += '"Your Lie in April" is a heartfelt anime that explores characters\' struggles and emotional depth.<br>';
+    }
+    else if (answers.question1 === 'World-building' && answers.question2 === 'Fantasy' && answers.question4 === 'Fantasy World') {
+        recommendations += 'For amazing world-building, try "Lord of the Rings" for movies, and "Attack on Titan" anime.<br>';
+        recommendations += '"One Piece" manga will take you on a fantastic journey across an incredible world.<br>';
+    }
+    else if (answers.question2 === 'Comedy' && answers.question9 === 'Light') {
+        recommendations += 'For a fun, light-hearted time, check out "The Office" TV show or "Superbad" movie.<br>';
+        recommendations += '"K-On!" is an anime that will bring lots of laughs and cheerful vibes.<br>';
+    }
+    else if (answers.question2 === 'Horror' && answers.question3 === 'Sad') {
+        recommendations += 'If you enjoy horror with a tragic touch, try "The Haunting of Hill House" for TV shows, and "The Cabin in the Woods" for movies.<br>';
+        recommendations += '"Another" is a spooky anime with a tragic storyline.<br>';
+    }
+    else {
+        recommendations += 'We have a variety of options for you! Check out movies, TV shows, and anime based on your preferences.<br>';
+    }
+
+    return recommendations;
+}
+</script>
+
+</body>
+</html>
